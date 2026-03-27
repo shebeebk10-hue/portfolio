@@ -408,6 +408,14 @@ section {
         min-height: 500px;
     }
 }
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background: white;
+        padding: 20px;
+        border-top: 1px solid #e5e7eb;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -436,18 +444,25 @@ section {
         <div class="container-px d-flex justify-content-between align-items-center h-100 w-100">
             <a href="#" class="serif-title fs-3 text-decoration-none fw-medium text-dark">SK.</a>
             
-            <div class="d-none d-md-flex align-items-center gap-4">
-                <a href="#home" class="nav-custom-link">Home</a>
-                <a href="#skills" class="nav-custom-link">Skills</a>
-                <a href="#experience" class="nav-custom-link">Experience</a>
-                <a href="#projects" class="nav-custom-link">Works</a>
-                <a href="#certifications" class="nav-custom-link">Certificates</a>
-                <a href="#contact" class="nav-custom-link">Contact</a>
-            </div>
+           <div class="collapse navbar-collapse" id="navbarMenu">
+    <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4 mt-4 mt-md-0">
+        <a href="#home" class="nav-custom-link">Home</a>
+        <a href="#skills" class="nav-custom-link">Skills</a>
+        <a href="#experience" class="nav-custom-link">Experience</a>
+        <a href="#projects" class="nav-custom-link">Works</a>
+        <a href="#certifications" class="nav-custom-link">Certificates</a>
+        <a href="#contact" class="nav-custom-link">Contact</a>
+    </div>
+</div>
+
             
-            <button class="d-md-none border-0 bg-transparent fs-3 text-dark">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </button>
+           <button class="navbar-toggler d-md-none border-0 bg-transparent fs-3 text-dark" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarMenu">
+    <i class="fa-solid fa-bars-staggered"></i>
+</button>
+
         </div>
     </nav>
 
