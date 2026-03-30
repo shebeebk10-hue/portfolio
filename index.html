@@ -21,7 +21,8 @@
             background-color: #fff;
             color: var(--nike-black);
             overflow-x: hidden;
-            padding-top: 130px; 
+            /* Adjusted padding to match the height of the now-fixed navbar only */
+            padding-top: 80px; 
         }
 
         .fw-black { font-weight: 900; }
@@ -29,7 +30,14 @@
         /* Navigation */
         .navbar-brand img { transition: transform 0.3s ease; }
         .navbar-brand:hover img { transform: scale(1.1); }
-        .nav-link { position: relative; padding: 5px 0 !important; }
+        
+        /* UPDATED: Increased font size for main nav links */
+        .nav-link { 
+            position: relative; 
+            padding: 5px 0 !important; 
+            font-size: 18px !important; 
+        }
+        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -44,7 +52,7 @@
             height: 90vh;
             overflow: hidden;
             position: relative;
-            background-color: #000;
+            background-color: #000000;
         }
 
         .slide-container {
@@ -65,7 +73,7 @@
         .slide.active { opacity: 1; }
 
         /* Background Images */
-        .bg-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?q=80&w=2070'); }
+        .bg-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-HQ8194-104_1.jpg?rnd=20200526195200&tr=w-1080'); }
         .bg-2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=2080'); }
 
         .hero-overlay {
@@ -77,39 +85,104 @@
         }
 
         /* Sub-sections */
-        .hero-sub-section { height: 700px; overflow: hidden; position: relative; }
+        .hero-sub-section { height: 1100px; overflow: hidden; position: relative; }
         .hero-sub-section img { transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
         .hero-sub-section:hover img { transform: scale(1.05); }
         .overlay-content { position: absolute; bottom: 40px; left: 40px; z-index: 2; }
 
-        /* Floating Shoe Stack */
-        .shoe-stack {
-            position: relative;
-            width: 100%; height: 400px;
-            display: flex; justify-content: center; align-items: center;
-        }
-        .floating-shoe {
-            position: absolute;
-            width: 320px;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
-            transition: all 0.5s ease;
-        }
-        .shoe-1 { transform: rotate(-20deg) translateX(-60px); z-index: 3; }
-        .shoe-2 { transform: rotate(-15deg) translateX(40px); z-index: 2; opacity: 0.8; }
-        .shoe-3 { transform: rotate(-10deg) translateX(140px); z-index: 1; opacity: 0.5; }
-        
-        .hero-sub-section:hover .shoe-1 { transform: rotate(-10deg) translateY(-20px); }
-        .hero-sub-section:hover .shoe-2 { transform: rotate(-5deg) translate(60px, -10px); }
-
         /* Sport Slider */
+        .sport-slider-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
         .sport-slider {
-            display: flex; overflow-x: auto; gap: 20px;
-            scroll-behavior: smooth; padding-bottom: 20px;
+            display: flex; 
+            gap: 12px;
+            scroll-behavior: smooth; 
+            padding-bottom: 20px;
         }
         .sport-slider::-webkit-scrollbar { display: none; }
-        .sport-card { min-width: 400px; height: 500px; flex-shrink: 0; cursor: pointer; }
-        .sport-card img { width: 100%; height: 90%; object-fit: cover; transition: opacity 0.3s; }
+        .sport-card { 
+            min-width: calc(33.333% - 8px); 
+            height: 600px; 
+            flex-shrink: 0; 
+            cursor: pointer; 
+        }
+        .sport-card img { width: 100%; height: 90%; object-fit: cover; transition: opacity 0.3s; border-radius: 4px; }
         .sport-card:hover img { opacity: 0.8; }
+
+        /* --- Nike App Banner Section --- */
+        .app-banner {
+            background-color: #f2ede4;
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+        .app-banner img.nike-app-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            padding: 10px;
+            border-radius: 12px;
+        }
+        .app-banner h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+        .app-banner .qr-code {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* --- Spotlight Section --- */
+        .spotlight-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+        
+        /* UPDATED: Increased font size for Spotlight heading */
+        .spotlight-section h2 {
+            font-size: 82px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+        
+        .spotlight-section p {
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 20px;
+            padding: 0 5%;
+        }
+        .spotlight-item {
+            text-decoration: none;
+            color: black;
+            transition: opacity 0.3s;
+        }
+        .spotlight-item:hover {
+            opacity: 0.7;
+        }
+        .spotlight-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .spotlight-item span {
+            font-size: 14px;
+            font-weight: 600;
+        }
 
         /* Category Links Section */
         .pre-footer-links { padding: 60px 10%; background-color: #fff; }
@@ -130,41 +203,45 @@
 </head>
 <body>
 
-    <header class="fixed-top bg-white">
-        <div class="top-nav d-flex justify-content-end align-items-center py-1 px-5 bg-light border-bottom" style="font-size: 12px;">
-            <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Find a Store</a> |
-            <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Help</a> |
-            <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Join Us</a> |
-            <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Sign In</a>
-        </div>
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-5 py-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" width="60" alt="Nike">
-                </a>
-                
-                <div class="collapse navbar-collapse justify-content-center">
-                    <ul class="navbar-nav gap-4">
-                        <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">New & Featured</a></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Men</a></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Women</a></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Kids</a></li>
-                        <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Sale</a></li>
-                    </ul>
-                </div>
-
-                <div class="d-flex align-items-center gap-3">
-                    <div class="search-bar d-none d-md-flex align-items-center bg-light rounded-pill px-3 py-2">
-                        <i class="fas fa-search text-muted me-2"></i>
-                        <input type="search" placeholder="Search" class="border-0 bg-transparent outline-none" style="width: 140px;">
-                    </div>
-                    <a href="#" class="text-dark"><i class="far fa-heart fs-5"></i></a>
-                    <a href="#" class="text-dark"><i class="fas fa-shopping-bag fs-5"></i></a>
-                </div>
+   <header class="bg-white">
+    <div class="top-nav d-flex justify-content-end align-items-center py-1 px-5 bg-light border-bottom" style="font-size: 12px;">
+        <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Find a Store</a> |
+        <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Help</a> |
+        <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Join Us</a> |
+        <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Sign In</a>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-5 py-3 fixed-top shadow-sm">
+        <div class="container-fluid position-relative d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" width="60" alt="Nike">
+            </a>
+            
+            <div class="collapse navbar-collapse position-absolute top-50 start-50 translate-middle" id="navbarNav">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">New & Featured</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Men</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Women</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Kids</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Sale</a></li>
+                </ul>
             </div>
-        </nav>
-    </header>
+
+            <div class="d-flex align-items-center gap-3">
+                <div class="search-bar d-none d-md-flex align-items-center bg-light rounded-pill px-3 py-2">
+                    <i class="fas fa-search text-muted me-2"></i>
+                    <input type="search" placeholder="Search" class="border-0 bg-transparent outline-none" style="width: 140px;">
+                </div>
+                <a href="#" class="text-dark"><i class="far fa-heart fs-5"></i></a>
+                <a href="#" class="text-dark"><i class="fas fa-shopping-bag fs-5"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="text-center py-2 bg-light border-top border-bottom" style="font-size: 16px; color: #111;">
+        For orders placed before 30 January 2026, you can track and manage them <a href="#" class="text-dark text-decoration-underline">here</a>
+    </div>
+</header>
 
     <main>
         <section class="hero-section">
@@ -174,7 +251,7 @@
             </div>
             <div class="hero-overlay">
                 <div class="container text-center text-white">
-                    <h1 class="display-1 fw-black italic">RACE THE NIGHT AWAY</h1>
+                    <h1 class="display-1 fw-black italic">RACE THE NIGHT </h1>
                     <p class="fs-4 fw-light">The After Dark Tour is back. Built for women, powered by Nike.</p>
                     <div class="mt-4">
                         <button class="btn btn-light rounded-pill px-5 py-2 fw-bold">Shop the Collection</button>
@@ -186,24 +263,20 @@
         <section class="container-fluid p-0">
             <div class="row g-0">
                 <div class="col-md-6 hero-sub-section">
-                    <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?q=80&w=2085" class="w-100 h-100 object-fit-cover" alt="Running">
+                    <img src="https://images-static.nykaa.com/uploads/b6595a43-1731-4da9-bbe6-6c599fdd1c79.png?tr=cm-pad_resize,w-750" class="w-100 h-100 object-fit-cover" alt="Running">
                     <div class="overlay-content text-white">
                         <p class="mb-1 fw-bold">Nike Running</p>
                         <h2 class="display-4 fw-black">POWER FOR EVERY RUN</h2>
                         <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop</button>
                     </div>
                 </div>
-                
-                <div class="col-md-6 bg-light hero-sub-section d-flex flex-column justify-content-between p-5">
-                    <div class="shoe-stack">
-                        <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/010787e9-44d7-464a-867c-175586617a22/NIKE+AIR+MAX+1.png" class="floating-shoe shoe-1" alt="Air Max">
-                        <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9e86c0c1-3d44-4632-9c4c-350616194726/NIKE+AIR+MAX+1.png" class="floating-shoe shoe-2" alt="Air Max">
-                        <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e38b3684-2f2b-42f0-9759-543503a74697/NIKE+AIR+MAX+1.png" class="floating-shoe shoe-3" alt="Air Max">
-                    </div>
-                    <div>
-                        <p class="text-muted mb-1 fw-bold">Trending Now</p>
-                        <h2 class="display-5 fw-black">REFRESH YOUR SNEAKER ROTATION</h2>
-                        <button class="btn btn-dark rounded-pill mt-3 px-4 fw-bold">Shop Sneakers</button>
+
+                <div class="col-md-6 hero-sub-section">
+                    <img src="https://images-static.nykaa.com/uploads/b34e3d48-a178-4ee9-9ece-18b7eb17dea3.png?tr=cm-pad_resize,w-750" class="w-100 h-100 object-fit-cover" alt="Running">
+                    <div class="overlay-content text-white">
+                        <p class="mb-1 fw-bold">Trending Now</p>
+                        <h2 class="display-4 fw-black">REFRESH YOUR SNEAKER ROTATION</h2>
+                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop</button>
                     </div>
                 </div>
             </div>
@@ -212,18 +285,18 @@
         <section class="container-fluid p-0">
             <div class="row g-0">
                 <div class="col-md-6 hero-sub-section">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" class="w-100 h-100 object-fit-cover" alt="Athletes">
+                    <img src="https://images-static.nykaa.com/uploads/9bb64081-7a35-4900-b107-64ca3f2fe2b4.png?tr=cm-pad_resize,w-750" class="w-100 h-100 object-fit-cover" alt="Athletes">
                     <div class="overlay-content text-white">
                         <h2 class="display-4 fw-black">ATHLETE PICKS</h2>
-                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop the Look</button>
+                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop</button>
                     </div>
                 </div>
                 <div class="col-md-6 hero-sub-section">
-                    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1974" class="w-100 h-100 object-fit-cover" alt="Training">
+                    <img src="https://images-static.nykaa.com/uploads/4d6cd237-7f42-4e75-b562-829f51ca0051.png?tr=cm-pad_resize,w-750" class="w-100 h-100 object-fit-cover" alt="Training">
                     <div class="overlay-content text-white">
                         <p class="mb-1 fw-bold">Nike Training</p>
                         <h2 class="display-4 fw-black">JUST DO THE WORK</h2>
-                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop Training</button>
+                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop</button>
                     </div>
                 </div>
             </div>
@@ -237,69 +310,99 @@
                     <button class="btn btn-light rounded-circle shadow-sm" onclick="scrollSlider(1)" style="width:45px; height:45px;"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
-            <div class="sport-slider" id="sportSlider">
-                <div class="sport-card">
-                    <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=2067" alt="Cricket">
-                    <p class="mt-3 fw-bold">Cricket</p>
+            <div class="sport-slider-wrapper">
+                <div class="sport-slider" id="sportSlider">
+                    <div class="sport-card">
+                        <img src="https://images-static.nykaa.com/uploads/00a6c246-c5d0-47dd-a453-8f416ff21b4b.png?tr=cm-pad_resize,w-750" alt="Cricket">
+                        <p class="mt-3 fw-bold">Cricket</p>
+                    </div>
+                    <div class="sport-card">
+                        <img src="https://images-static.nykaa.com/uploads/ff10cf39-ad05-4490-8030-720ba052f416.png?tr=cm-pad_resize,w-750" alt="Football">
+                        <p class="mt-3 fw-bold">Football</p>
+                    </div>
+                    <div class="sport-card">
+                        <img src="https://images-static.nykaa.com/uploads/70632942-b27a-4d03-bf14-8a9af65463e2.png?tr=cm-pad_resize,w-750" alt="Basketball">
+                        <p class="mt-3 fw-bold">Basketball</p>
+                    </div>
+                    <div class="sport-card">
+                        <img src="https://images-static.nykaa.com/uploads/4db69a3a-ecd6-4dcd-9ecc-79bd252f4ea8.png?tr=cm-pad_resize,w-750" alt="Running">
+                        <p class="mt-3 fw-bold">Running</p>
+                    </div>
+                    <div class="sport-card">
+                        <img src="https://images-static.nykaa.com/uploads/26bd7a04-9f96-4ea4-aa56-0613eb384872.png?tr=cm-pad_resize,w-750" alt="Training">
+                        <p class="mt-3 fw-bold">Training</p>
+                    </div>
+                    <div class="sport-card">
+                        <img src="https://images-static.nykaa.com/uploads/1afff54a-c992-4ece-8b78-6aa6a54c9bba.png?tr=cm-pad_resize,w-750" alt="Sports Wear">
+                        <p class="mt-3 fw-bold">Sports Wear</p>
+                    </div>
                 </div>
-                <div class="sport-card">
-                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2093" alt="Football">
-                    <p class="mt-3 fw-bold">Football</p>
-                </div>
-                <div class="sport-card">
-                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2090" alt="Basketball">
-                    <p class="mt-3 fw-bold">Basketball</p>
-                </div>
-                <div class="sport-card">
-                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070" alt="Running">
-                    <p class="mt-3 fw-bold">Running</p>
-                </div>
+            </div>
+        </section>   
+
+        <section class="container-fluid p-0">
+            <div class="app-banner">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" class="nike-app-logo" alt="Nike Logo">
+                <h2 class="fw-black">IT'S BETTER ON THE NIKE APP</h2>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="qr-code" alt="QR Code">
             </div>
         </section>
 
-        <section class="pre-footer-links">
+        <section class="spotlight-section">
             <div class="container-fluid">
-                <div class="row mb-5">
-                    <div class="col-6 col-md-3">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600" alt="Icons" class="img-fluid mb-3 rounded" style="height: 200px; width: 100%; object-fit: cover;">
-                        <h5>Icons</h5>
-                        <ul>
-                            <li><a href="#">Air Force 1</a></li>
-                            <li><a href="#">Huarache</a></li>
-                            <li><a href="#">Air Max 90</a></li>
-                            <li><a href="#">Air Max 95</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=600" alt="Shoes" class="img-fluid mb-3 rounded" style="height: 200px; width: 100%; object-fit: cover;">
-                        <h5>Shoes</h5>
-                        <ul>
-                            <li><a href="#">All Shoes</a></li>
-                            <li><a href="#">Custom Shoes</a></li>
-                            <li><a href="#">Jordan Shoes</a></li>
-                            <li><a href="#">Running Shoes</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600" alt="Clothing" class="img-fluid mb-3 rounded" style="height: 200px; width: 100%; object-fit: cover;">
-                        <h5>Clothing</h5>
-                        <ul>
-                            <li><a href="#">All Clothing</a></li>
-                            <li><a href="#">Modest Wear</a></li>
-                            <li><a href="#">Hoodies & Pullovers</a></li>
-                            <li><a href="#">Shirts & Tops</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <img src="https://images.unsplash.com/photo-1519232402910-2fcc0f64c67f?q=80&w=600" alt="Kids" class="img-fluid mb-3 rounded" style="height: 200px; width: 100%; object-fit: cover;">
-                        <h5>Kids'</h5>
-                        <ul>
-                            <li><a href="#">Infant & Toddler Shoes</a></li>
-                            <li><a href="#">Kids' Shoes</a></li>
-                            <li><a href="#">Kids' Jordan Shoes</a></li>
-                            <li><a href="#">Kids' Basketball Shoes</a></li>
-                        </ul>
-                    </div>
+                <h2>Spotlight</h2>
+                <p>Classic silhouettes and cutting-edge innovation to build your game from the ground up.</p>
+                
+                <div class="spotlight-grid">
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/70703269-64eb-4db2-8aaf-1903753bab5b.png?tr=cm-pad_resize,w-225" alt="Air Jordan 1">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/0d7f9cba-1d25-4e68-a880-42926a45276d.png?tr=cm-pad_resize,w-225" alt="Air Force 1">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/2065d81f-6dca-41a7-a3b9-8033928b0bc5.png?tr=cm-pad_resize,w-225" alt="Graphic Tees">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/cea497f0-0300-4b42-8800-815912e151e5.png?tr=cm-pad_resize,w-225" alt="Pegasus 41">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/5cd340f4-c8bc-4c55-8fed-49a4fdd31414.png?tr=cm-pad_resize,w-225" alt="Tights">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/29c73962-0dc0-4b75-9eac-3d10cf90ea43.png?tr=cm-pad_resize,w-225" alt="Metcon">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/2951dbc2-e2af-4d0b-bda2-9065aa7d7282.png?tr=cm-pad_resize,w-225" alt="Jackets">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/86dee53b-ebec-4520-bf53-0b0503bf9707.png?tr=cm-pad_resize,w-225" alt="Quest">
+                    </a>
+
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/09cb6dcc-89ca-47ff-897d-4e4e485285e5.png?tr=cm-pad_resize,w-225" alt="Dunk">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/b82593a5-dd23-4500-8a94-a561b8204c59.png?tr=cm-pad_resize,w-225" alt="Bottoms">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/417a569f-a915-4a76-b9d1-6cd4e47c5cfe.png?tr=cm-pad_resize,w-225" alt="P-6000">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/9695d31a-08eb-4cc7-9456-76d2e609e987.png?tr=cm-pad_resize,w-225" alt="Caps">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/982e278e-7de1-446d-8a69-b040a3d451c3.png?tr=cm-pad_resize,w-225" alt="Air Max">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/a88d4bb2-1c3c-48a0-b0e1-d4f137a98484.png?tr=cm-pad_resize,w-225" alt="Sports Bras">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/cd867f04-eb2a-4022-920a-e63583e32477.png?tr=cm-pad_resize,w-225" alt="Court Vision">
+                    </a>
+                    <a href="#" class="spotlight-item">
+                        <img src="https://images-static.nykaa.com/uploads/6a59d536-6a77-485f-a6a3-492ac3e37c69.png?tr=cm-pad_resize,w-225" alt="Shorts">
+                    </a>
                 </div>
             </div>
         </section>
@@ -328,9 +431,9 @@
                     <p><a href="#">Sustainability</a></p>
                 </div>
                 <div class="col-md-3 text-end">
-                    <a href="#" class="fs-4 mx-2"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="fs-4 mx-2"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="fs-4 mx-2"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/Nike" class="fs-4 mx-2"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/nike/" class="fs-4 mx-2"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/nike/" class="fs-4 mx-2"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <hr class="border-secondary my-4">
@@ -361,8 +464,8 @@
         // Sport Slider
         function scrollSlider(direction) {
             const slider = document.getElementById('sportSlider');
-            const cardWidth = 420; 
-            slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+            const sliderWidth = slider.offsetWidth;
+            slider.scrollBy({ left: direction * sliderWidth, behavior: 'smooth' });
         }
     </script>
 </body>
