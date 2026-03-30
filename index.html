@@ -2,205 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nike. Just Do It. Nike IN</title>
+
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- NIKE CUSTOM CSS --- */
-        :root {
-            --nike-black: #111111;
-            --nike-grey: #f5f5f5;
-            --nike-dark-grey: #707072;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #fff;
-            color: var(--nike-black);
-            overflow-x: hidden;
-            /* Adjusted padding to match the height of the now-fixed navbar only */
-            padding-top: 80px; 
-        }
-
-        .fw-black { font-weight: 900; }
-
-        /* Navigation */
-        .navbar-brand img { transition: transform 0.3s ease; }
-        .navbar-brand:hover img { transform: scale(1.1); }
-        
-        /* UPDATED: Increased font size for main nav links */
-        .nav-link { 
-            position: relative; 
-            padding: 5px 0 !important; 
-            font-size: 18px !important; 
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0; height: 2px; bottom: 0; left: 0;
-            background-color: black;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after { width: 100%; }
-
-        /* Hero Slider Section */
-        .hero-section {
-            height: 90vh;
-            overflow: hidden;
-            position: relative;
-            background-color: #000000;
-        }
-
-        .slide-container {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1;
-        }
-
-        .slide {
-            position: absolute;
-            width: 100%; height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-        }
-
-        .slide.active { opacity: 1; }
-
-        /* Background Images */
-        .bg-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-HQ8194-104_1.jpg?rnd=20200526195200&tr=w-1080'); }
-        .bg-2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=2080'); }
-
-        .hero-overlay {
-            position: relative;
-            width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
-            display: flex; align-items: flex-end; padding-bottom: 80px;
-            z-index: 2;
-        }
-
-        /* Sub-sections */
-        .hero-sub-section { height: 1100px; overflow: hidden; position: relative; }
-        .hero-sub-section img { transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
-        .hero-sub-section:hover img { transform: scale(1.05); }
-        .overlay-content { position: absolute; bottom: 40px; left: 40px; z-index: 2; }
-
-        /* Sport Slider */
-        .sport-slider-wrapper {
-            overflow: hidden;
-            position: relative;
-        }
-        .sport-slider {
-            display: flex; 
-            gap: 12px;
-            scroll-behavior: smooth; 
-            padding-bottom: 20px;
-        }
-        .sport-slider::-webkit-scrollbar { display: none; }
-        .sport-card { 
-            min-width: calc(33.333% - 8px); 
-            height: 600px; 
-            flex-shrink: 0; 
-            cursor: pointer; 
-        }
-        .sport-card img { width: 100%; height: 90%; object-fit: cover; transition: opacity 0.3s; border-radius: 4px; }
-        .sport-card:hover img { opacity: 0.8; }
-
-        /* --- Nike App Banner Section --- */
-        .app-banner {
-            background-color: #f2ede4;
-            padding: 40px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            margin-bottom: 0px;
-        }
-        .app-banner img.nike-app-logo {
-            width: 60px;
-            height: 60px;
-            background: white;
-            padding: 10px;
-            border-radius: 12px;
-        }
-        .app-banner h2 {
-            font-size: 42px;
-            font-weight: 900;
-            margin: 0;
-            letter-spacing: -1px;
-        }
-        .app-banner .qr-code {
-            width: 80px;
-            height: 80px;
-        }
-
-        /* --- Spotlight Section --- */
-        .spotlight-section {
-            padding: 80px 0;
-            text-align: center;
-            background-color: #fff;
-        }
-        
-        /* UPDATED: Increased font size for Spotlight heading */
-        .spotlight-section h2 {
-            font-size: 82px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: -2px;
-        }
-        
-        .spotlight-section p {
-            font-size: 18px;
-            margin-bottom: 60px;
-        }
-        .spotlight-grid {
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            gap: 20px;
-            padding: 0 5%;
-        }
-        .spotlight-item {
-            text-decoration: none;
-            color: black;
-            transition: opacity 0.3s;
-        }
-        .spotlight-item:hover {
-            opacity: 0.7;
-        }
-        .spotlight-item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-        }
-        .spotlight-item span {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* Category Links Section */
-        .pre-footer-links { padding: 60px 10%; background-color: #fff; }
-        .pre-footer-links h5 { font-size: 16px; font-weight: 700; margin-bottom: 25px; }
-        .pre-footer-links ul { list-style: none; padding: 0; }
-        .pre-footer-links ul li { margin-bottom: 12px; }
-        .pre-footer-links ul li a {
-            text-decoration: none; color: var(--nike-dark-grey);
-            font-size: 16px; transition: color 0.2s;
-        }
-        .pre-footer-links ul li a:hover { color: black; }
-
-        /* Footer */
-        footer a { text-decoration: none; color: #7e7e7e; transition: color 0.3s; }
-        footer a:hover { color: #fff; }
-        .footer-header { color: #fff; font-size: 14px; font-weight: bold; text-transform: uppercase; margin-bottom: 20px; }
-=======
+       
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Personal Portfolio | Shebeeb K</title>
     
@@ -677,255 +481,12 @@ section {
     }
 }
 
->>>>>>> 0865a4bbf4a6bce55699a13d0332aa1ff3ecd5d5
     </style>
 </head>
 <body>
 
-<<<<<<< HEAD
-   <header class="bg-white">
-    <div class="top-nav d-flex justify-content-end align-items-center py-1 px-5 bg-light border-bottom" style="font-size: 12px;">
-        <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Find a Store</a> |
-        <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Help</a> |
-        <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Join Us</a> |
-        <a href="#" class="mx-2 text-dark text-decoration-none fw-medium">Sign In</a>
-    </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-5 py-3 fixed-top shadow-sm">
-        <div class="container-fluid position-relative d-flex justify-content-between align-items-center">
-            <a class="navbar-brand" href="#">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" width="60" alt="Nike">
-            </a>
-            
-            <div class="collapse navbar-collapse position-absolute top-50 start-50 translate-middle" id="navbarNav">
-                <ul class="navbar-nav gap-4">
-                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">New & Featured</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Men</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Women</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Kids</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#">Sale</a></li>
-                </ul>
-            </div>
 
-            <div class="d-flex align-items-center gap-3">
-                <div class="search-bar d-none d-md-flex align-items-center bg-light rounded-pill px-3 py-2">
-                    <i class="fas fa-search text-muted me-2"></i>
-                    <input type="search" placeholder="Search" class="border-0 bg-transparent outline-none" style="width: 140px;">
-                </div>
-                <a href="#" class="text-dark"><i class="far fa-heart fs-5"></i></a>
-                <a href="#" class="text-dark"><i class="fas fa-shopping-bag fs-5"></i></a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="text-center py-2 bg-light border-top border-bottom" style="font-size: 16px; color: #111;">
-        For orders placed before 30 January 2026, you can track and manage them <a href="#" class="text-dark text-decoration-underline">here</a>
-    </div>
-</header>
-
-    <main>
-        <section class="hero-section">
-            <div class="slide-container">
-                <div class="slide bg-1 active"></div>
-                <div class="slide bg-2"></div>
-            </div>
-            <div class="hero-overlay">
-                <div class="container text-center text-white">
-                    <h1 class="display-1 fw-black italic">RACE THE NIGHT </h1>
-                    <p class="fs-4 fw-light">The After Dark Tour is back. Built for women, powered by Nike.</p>
-                    <div class="mt-4">
-                        <button class="btn btn-light rounded-pill px-5 py-2 fw-bold">Shop the Collection</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-md-6 hero-sub-section">
-                    <img src="https://images-static.nykaa.com/uploads/b6595a43-1731-4da9-bbe6-6c599fdd1c79.png?tr=cm-pad_resize,w-750" class="w-100 h-100 object-fit-cover" alt="Running">
-                    <div class="overlay-content text-white">
-                        <p class="mb-1 fw-bold">Nike Running</p>
-                        <h2 class="display-4 fw-black">POWER FOR EVERY RUN</h2>
-                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop</button>
-                    </div>
-                </div>
-
-                <div class="col-md-6 hero-sub-section">
-                    <img src="https://images-static.nykaa.com/uploads/b34e3d48-a178-4ee9-9ece-18b7eb17dea3.png?tr=cm-pad_resize,w-750" class="w-100 h-100 object-fit-cover" alt="Running">
-                    <div class="overlay-content text-white">
-                        <p class="mb-1 fw-bold">Trending Now</p>
-                        <h2 class="display-4 fw-black">REFRESH YOUR SNEAKER ROTATION</h2>
-                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-md-6 hero-sub-section">
-                    <img src="https://images-static.nykaa.com/uploads/9bb64081-7a35-4900-b107-64ca3f2fe2b4.png?tr=cm-pad_resize,w-750" class="w-100 h-100 object-fit-cover" alt="Athletes">
-                    <div class="overlay-content text-white">
-                        <h2 class="display-4 fw-black">ATHLETE PICKS</h2>
-                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop</button>
-                    </div>
-                </div>
-                <div class="col-md-6 hero-sub-section">
-                    <img src="https://images-static.nykaa.com/uploads/4d6cd237-7f42-4e75-b562-829f51ca0051.png?tr=cm-pad_resize,w-750" class="w-100 h-100 object-fit-cover" alt="Training">
-                    <div class="overlay-content text-white">
-                        <p class="mb-1 fw-bold">Nike Training</p>
-                        <h2 class="display-4 fw-black">JUST DO THE WORK</h2>
-                        <button class="btn btn-light rounded-pill mt-3 px-4 fw-bold">Shop</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container-fluid py-5 px-lg-5">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="fw-black">SHOP BY SPORT</h2>
-                <div>
-                    <button class="btn btn-light rounded-circle shadow-sm me-2" onclick="scrollSlider(-1)" style="width:45px; height:45px;"><i class="fas fa-chevron-left"></i></button>
-                    <button class="btn btn-light rounded-circle shadow-sm" onclick="scrollSlider(1)" style="width:45px; height:45px;"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-            <div class="sport-slider-wrapper">
-                <div class="sport-slider" id="sportSlider">
-                    <div class="sport-card">
-                        <img src="https://images-static.nykaa.com/uploads/00a6c246-c5d0-47dd-a453-8f416ff21b4b.png?tr=cm-pad_resize,w-750" alt="Cricket">
-                        <p class="mt-3 fw-bold">Cricket</p>
-                    </div>
-                    <div class="sport-card">
-                        <img src="https://images-static.nykaa.com/uploads/ff10cf39-ad05-4490-8030-720ba052f416.png?tr=cm-pad_resize,w-750" alt="Football">
-                        <p class="mt-3 fw-bold">Football</p>
-                    </div>
-                    <div class="sport-card">
-                        <img src="https://images-static.nykaa.com/uploads/70632942-b27a-4d03-bf14-8a9af65463e2.png?tr=cm-pad_resize,w-750" alt="Basketball">
-                        <p class="mt-3 fw-bold">Basketball</p>
-                    </div>
-                    <div class="sport-card">
-                        <img src="https://images-static.nykaa.com/uploads/4db69a3a-ecd6-4dcd-9ecc-79bd252f4ea8.png?tr=cm-pad_resize,w-750" alt="Running">
-                        <p class="mt-3 fw-bold">Running</p>
-                    </div>
-                    <div class="sport-card">
-                        <img src="https://images-static.nykaa.com/uploads/26bd7a04-9f96-4ea4-aa56-0613eb384872.png?tr=cm-pad_resize,w-750" alt="Training">
-                        <p class="mt-3 fw-bold">Training</p>
-                    </div>
-                    <div class="sport-card">
-                        <img src="https://images-static.nykaa.com/uploads/1afff54a-c992-4ece-8b78-6aa6a54c9bba.png?tr=cm-pad_resize,w-750" alt="Sports Wear">
-                        <p class="mt-3 fw-bold">Sports Wear</p>
-                    </div>
-                </div>
-            </div>
-        </section>   
-
-        <section class="container-fluid p-0">
-            <div class="app-banner">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" class="nike-app-logo" alt="Nike Logo">
-                <h2 class="fw-black">IT'S BETTER ON THE NIKE APP</h2>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="qr-code" alt="QR Code">
-            </div>
-        </section>
-
-        <section class="spotlight-section">
-            <div class="container-fluid">
-                <h2>Spotlight</h2>
-                <p>Classic silhouettes and cutting-edge innovation to build your game from the ground up.</p>
-                
-                <div class="spotlight-grid">
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/70703269-64eb-4db2-8aaf-1903753bab5b.png?tr=cm-pad_resize,w-225" alt="Air Jordan 1">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/0d7f9cba-1d25-4e68-a880-42926a45276d.png?tr=cm-pad_resize,w-225" alt="Air Force 1">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/2065d81f-6dca-41a7-a3b9-8033928b0bc5.png?tr=cm-pad_resize,w-225" alt="Graphic Tees">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/cea497f0-0300-4b42-8800-815912e151e5.png?tr=cm-pad_resize,w-225" alt="Pegasus 41">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/5cd340f4-c8bc-4c55-8fed-49a4fdd31414.png?tr=cm-pad_resize,w-225" alt="Tights">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/29c73962-0dc0-4b75-9eac-3d10cf90ea43.png?tr=cm-pad_resize,w-225" alt="Metcon">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/2951dbc2-e2af-4d0b-bda2-9065aa7d7282.png?tr=cm-pad_resize,w-225" alt="Jackets">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/86dee53b-ebec-4520-bf53-0b0503bf9707.png?tr=cm-pad_resize,w-225" alt="Quest">
-                    </a>
-
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/09cb6dcc-89ca-47ff-897d-4e4e485285e5.png?tr=cm-pad_resize,w-225" alt="Dunk">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/b82593a5-dd23-4500-8a94-a561b8204c59.png?tr=cm-pad_resize,w-225" alt="Bottoms">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/417a569f-a915-4a76-b9d1-6cd4e47c5cfe.png?tr=cm-pad_resize,w-225" alt="P-6000">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/9695d31a-08eb-4cc7-9456-76d2e609e987.png?tr=cm-pad_resize,w-225" alt="Caps">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/982e278e-7de1-446d-8a69-b040a3d451c3.png?tr=cm-pad_resize,w-225" alt="Air Max">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/a88d4bb2-1c3c-48a0-b0e1-d4f137a98484.png?tr=cm-pad_resize,w-225" alt="Sports Bras">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/cd867f04-eb2a-4022-920a-e63583e32477.png?tr=cm-pad_resize,w-225" alt="Court Vision">
-                    </a>
-                    <a href="#" class="spotlight-item">
-                        <img src="https://images-static.nykaa.com/uploads/6a59d536-6a77-485f-a6a3-492ac3e37c69.png?tr=cm-pad_resize,w-225" alt="Shorts">
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-black text-white pt-5 pb-4 px-lg-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-header">Find A Store</div>
-                    <div class="footer-header">Become A Member</div>
-                    <div class="footer-header">Feedback</div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-header">Get Help</div>
-                    <p><a href="#">Order Status</a></p>
-                    <p><a href="#">Delivery</a></p>
-                    <p><a href="#">Returns</a></p>
-                    <p><a href="#">Payment Options</a></p>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-header">About Nike</div>
-                    <p><a href="#">News</a></p>
-                    <p><a href="#">Careers</a></p>
-                    <p><a href="#">Investors</a></p>
-                    <p><a href="#">Sustainability</a></p>
-                </div>
-                <div class="col-md-3 text-end">
-                    <a href="https://x.com/Nike" class="fs-4 mx-2"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.facebook.com/nike/" class="fs-4 mx-2"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/nike/" class="fs-4 mx-2"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <hr class="border-secondary my-4">
-            <div class="d-flex justify-content-between small text-secondary">
-                <p>© 2026 Nike, Inc. All Rights Reserved</p>
-                <div class="d-flex gap-3">
-                    <a href="#">Guides</a>
-                    <a href="#">Terms of Sale</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-=======
+   
     <div id="loader">
         <div class="text-center">
             <h1 class="loader-logo">SK</h1>
@@ -1206,116 +767,154 @@ Portfolio
         </div>
     </section>
 
-    <section id="projects" class="section-padding bg-white">
-        <div class="container-px">
-            <div class="mb-5">
-                <span class="text-uppercase fw-bold d-block mb-3" style="font-size: 12px; letter-spacing: 5px; color: var(--color-brand);">Selected</span>
-                <h2 class="serif-title section-title">Works</h2>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="project-card border bg-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026&auto=format&fit=crop');">
-                        <div class="project-card-overlay"></div>
-                        <span class="serif-title align-self-end text-white opacity-10 fs-1 z-2" style="font-size: 6rem !important;">01</span>
-                        <div class="z-2">
-                            <h3 class="serif-title mb-4 text-white fs-1">Sinet Web Platform</h3>
-                            <p class="mb-5 text-light fs-5" style="max-width: 450px;">A modern web solution showcasing advanced frontend architecture, deployed via GitHub Pages.</p>
-                            <div class="d-flex flex-column gap-4">
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold" style="background-color: var(--color-brand); font-size: 10px; letter-spacing: 2px;">Frontend</span>
-                                    <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold bg-secondary bg-opacity-50" style="font-size: 10px; letter-spacing: 2px;">UI/UX</span>
-                                </div>
-                                <a href="https://shebeebk10-hue.github.io/site-of-sinet/" target="_blank" class="btn btn-light text-dark fw-bold text-uppercase py-3 px-5 rounded-pill" style="font-size: 11px; letter-spacing: 2px; width: fit-content;">Live Demo</a>
+<section id="projects" class="section-padding bg-white">
+    <div class="container-px">
+        <div class="mb-5">
+            <span class="text-uppercase fw-bold d-block mb-3" style="font-size: 12px; letter-spacing: 5px; color: var(--color-brand);">Selected</span>
+            <h2 class="serif-title section-title">Works</h2>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6">
+                <div class="project-card border bg-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026&auto=format&fit=crop');">
+                    <div class="project-card-overlay"></div>
+                    <span class="serif-title align-self-end text-white opacity-10 fs-1 z-2" style="font-size: 6rem !important;">01</span>
+                    <div class="z-2">
+                        <h3 class="serif-title mb-4 text-white fs-1">Sinet Web Platform</h3>
+                        <p class="mb-5 text-light fs-5" style="max-width: 450px;">A modern web solution showcasing advanced frontend architecture, deployed via GitHub Pages.</p>
+                        <div class="d-flex flex-column gap-4">
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold" style="background-color: var(--color-brand); font-size: 10px; letter-spacing: 2px;">Frontend</span>
+                                <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold bg-secondary bg-opacity-50" style="font-size: 10px; letter-spacing: 2px;">UI/UX</span>
                             </div>
+                            <a href="https://shebeebk10-hue.github.io/site-of-sinet/" target="_blank" class="btn btn-light text-dark fw-bold text-uppercase py-3 px-5 rounded-pill" style="font-size: 11px; letter-spacing: 2px; width: fit-content;">Live Demo</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-6">
-                    <div class="project-card border bg-image" style="background-image: url('https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=2071&auto=format&fit=crop');">
-                        <div class="project-card-overlay"></div>
-                        <span class="serif-title align-self-end text-white opacity-10 fs-1 z-2" style="font-size: 6rem !important;">02</span>
-                        <div class="z-2">
-                            <h3 class="serif-title mb-4 text-white fs-1">Paypal Interface</h3>
-                            <p class="mb-5 text-light fs-5" style="max-width: 450px;">A precision-crafted recreation of the PayPal web experience, focusing on clean UI components and responsive design.</p>
-                            <div class="d-flex flex-column gap-4">
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold" style="background-color: var(--color-brand); font-size: 10px; letter-spacing: 2px;">Frontend</span>
-                                    <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold bg-secondary bg-opacity-50" style="font-size: 10px; letter-spacing: 2px;">Cloning</span>
-                                </div>
-                                <a href="https://shebeebk10-hue.github.io/paypal/" target="_blank" class="btn btn-light text-dark fw-bold text-uppercase py-3 px-5 rounded-pill" style="font-size: 11px; letter-spacing: 2px; width: fit-content;">Live Demo</a>
+            <div class="col-md-6">
+                <div class="project-card border bg-image" style="background-image: url('https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=2071&auto=format&fit=crop');">
+                    <div class="project-card-overlay"></div>
+                    <span class="serif-title align-self-end text-white opacity-10 fs-1 z-2" style="font-size: 6rem !important;">02</span>
+                    <div class="z-2">
+                        <h3 class="serif-title mb-4 text-white fs-1">Paypal Interface</h3>
+                        <p class="mb-5 text-light fs-5" style="max-width: 450px;">A precision-crafted recreation of the PayPal web experience, focusing on clean UI components and responsive design.</p>
+                        <div class="d-flex flex-column gap-4">
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold" style="background-color: var(--color-brand); font-size: 10px; letter-spacing: 2px;">Frontend</span>
+                                <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold bg-secondary bg-opacity-50" style="font-size: 10px; letter-spacing: 2px;">Cloning</span>
                             </div>
+                            <a href="https://shebeebk10-hue.github.io/paypal/" target="_blank" class="btn btn-light text-dark fw-bold text-uppercase py-3 px-5 rounded-pill" style="font-size: 11px; letter-spacing: 2px; width: fit-content;">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="project-card border bg-image" style="background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="project-card-overlay"></div>
+                    <span class="serif-title align-self-end text-white opacity-10 fs-1 z-2" style="font-size: 6rem !important;">03</span>
+                    <div class="z-2">
+                        <h3 class="serif-title mb-4 text-white fs-1">Nike Concept Store</h3>
+                        <p class="mb-5 text-light fs-5" style="max-width: 450px;">A high-performance e-commerce landing page featuring modern product layouts and a bold aesthetic.</p>
+                        <div class="d-flex flex-column gap-4">
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold" style="background-color: var(--color-brand); font-size: 10px; letter-spacing: 2px;">Ecommerce</span>
+                                <span class="badge rounded-pill px-4 py-2 text-uppercase fw-bold bg-secondary bg-opacity-50" style="font-size: 10px; letter-spacing: 2px;">Product</span>
+                            </div>
+                            <a href="https://shebeebk10-hue.github.io/nike/" target="_blank" class="btn btn-light text-dark fw-bold text-uppercase py-3 px-5 rounded-pill" style="font-size: 11px; letter-spacing: 2px; width: fit-content;">Live Demo</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="certifications" class="section-padding bg-light">
-        <div class="container-px">
-            <div class="mb-5">
-                <span class="text-uppercase fw-bold d-block mb-3" style="font-size: 12px; letter-spacing: 5px; color: var(--color-brand);">Achievements</span>
-                <h2 class="serif-title section-title">Certifications</h2>
+  <section id="certifications" class="section-padding bg-light">
+    <div class="container-px">
+        <div class="mb-5">
+            <span class="text-uppercase fw-bold d-block mb-3" style="font-size: 12px; letter-spacing: 5px; color: var(--color-brand);">Achievements</span>
+            <h2 class="serif-title section-title">Certifications</h2>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <div class="cert-icon-container"><i class="fa-brands fa-python"></i></div>
+                    <h3 class="serif-title fs-3 mb-2">Python ATM Simulation</h3>
+                    <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">18 Mar 2026</p>
+                    <p class="text-secondary mb-4 flex-grow-1">Essentials Mini Project focusing on object-oriented programming and logic implementation.</p>
+                    <a href="certificate/pythonatm.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
+                </div>
             </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="cert-card">
-                        <div class="cert-icon-container"><i class="fa-brands fa-python"></i></div>
-                        <h3 class="serif-title fs-3 mb-2">Python ATM Simulation</h3>
-                        <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">18 Mar 2026</p>
-                        <p class="text-secondary mb-4 flex-grow-1">Essentials Mini Project focusing on object-oriented programming and logic implementation.</p>
-                        <a href="certificate/pythonatm.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
-                    </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="cert-card">
-                        <div class="cert-icon-container"><i class="fa-brands fa-node-js"></i></div>
-                        <h3 class="serif-title fs-3 mb-2">Node.js Bootcamp</h3>
-                        <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">23 Mar 2026</p>
-                        <p class="text-secondary mb-4 flex-grow-1">Comprehensive training in server-side JavaScript, REST APIs, and asynchronous programming.</p>
-                        <a href="certificate/nodejs.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
-                    </div>
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <div class="cert-icon-container"><i class="fa-brands fa-node-js"></i></div>
+                    <h3 class="serif-title fs-3 mb-2">Node.js Bootcamp</h3>
+                    <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">23 Mar 2026</p>
+                    <p class="text-secondary mb-4 flex-grow-1">Comprehensive training in server-side JavaScript, REST APIs, and asynchronous programming.</p>
+                    <a href="certificate/nodejs.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
                 </div>
+            </div>
 
-                <div class="col-md-4">
-                    <div class="cert-card">
-                        <div class="cert-icon-container"><i class="fa-solid fa-file-excel"></i></div>
-                        <h3 class="serif-title fs-3 mb-2">Excel Bootcamp</h3>
-                        <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">06 Mar 2026</p>
-                        <p class="text-secondary mb-4 flex-grow-1">Advanced data manipulation, pivot tables, and visualization techniques for business analytics.</p>
-                        <a href="certificate/excelbootcamp.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
-                    </div>
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <div class="cert-icon-container"><i class="fa-solid fa-file-excel"></i></div>
+                    <h3 class="serif-title fs-3 mb-2">Excel Bootcamp</h3>
+                    <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">06 Mar 2026</p>
+                    <p class="text-secondary mb-4 flex-grow-1">Advanced data manipulation, pivot tables, and visualization techniques for business analytics.</p>
+                    <a href="certificate/excelbootcamp.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
                 </div>
+            </div>
 
-                <div class="col-md-4 offset-md-4">
-                    <div class="cert-card">
-                        <div class="cert-icon-container"><i class="fa-solid fa-database"></i></div>
-                        <h3 class="serif-title fs-3 mb-2">SQL Bootcamp</h3>
-                        <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">24 Mar 2026</p>
-                        <p class="text-secondary mb-4 flex-grow-1">Mastering relational databases, complex queries, and database design principles.</p>
-                        <a href="certificate/sqlbootcamp.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
-                    </div>
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <div class="cert-icon-container"><i class="fa-brands fa-js"></i></div>
+                    <h3 class="serif-title fs-3 mb-2">JavaScript Bootcamp</h3>
+                    <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">20 Mar 2026</p>
+                    <p class="text-secondary mb-4 flex-grow-1">Mastering ES6+ features, DOM manipulation, and modern JavaScript development workflows.</p>
+                    <a href="certificate\JSBootcamp.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <div class="cert-icon-container"><i class="fa-solid fa-database"></i></div>
+                    <h3 class="serif-title fs-3 mb-2">SQL Bootcamp</h3>
+                    <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">24 Mar 2026</p>
+                    <p class="text-secondary mb-4 flex-grow-1">Mastering relational databases, complex queries, and database design principles.</p>
+                    <a href="certificate/sqlbootcamp.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <div class="cert-icon-container"><i class="fa-solid fa-diagram-project"></i></div>
+                    <h3 class="serif-title fs-3 mb-2">GraphQL Mastery</h3>
+                    <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">28 Mar 2026</p>
+                    <p class="text-secondary mb-4 flex-grow-1">In-depth study of query languages for APIs, schema design, and optimizing data fetching.</p>
+                    <a href="certificate\GraphQL.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="resume" class="section-padding bg-light">
-        <div class="container-px text-center">
-             <span class="text-uppercase fw-bold d-block mb-4" style="font-size: 12px; letter-spacing: 5px; color: var(--color-brand);">Curriculum Vitae</span>
-             <h2 class="serif-title section-title mb-4">Resume</h2>
-             <p class="text-secondary fs-4 mb-5 mx-auto" style="max-width: 650px;">Click below to view or download my professional experience and technical background.</p>
-             
-             <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4">
-                 <a href="certificate/resume.pdf" target="_blank" class="btn btn-outline-warning border-2 rounded-pill py-4 px-5 fs-5 fw-bold" style="color: var(--color-brand); border-color: var(--color-brand) !important;">View Resume</a>
-                 <a href="certificate/resume.pdf" download class="btn-brand-pill fs-5 py-4 px-5">Download PDF</a>
-             </div>
-        </div>
-    </section>
+    <div class="container-px text-center">
+         <span class="text-uppercase fw-bold d-block mb-4" style="font-size: 12px; letter-spacing: 5px; color: var(--color-brand);">Curriculum Vitae</span>
+         <h2 class="serif-title section-title mb-4">Resume</h2>
+         <p class="text-secondary fs-4 mb-5 mx-auto" style="max-width: 650px;">Click below to view or download my professional experience and technical background.</p>
+         
+         <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+             <a href="certificate/resume.pdf" target="_blank" class="btn btn-outline-warning border-2 rounded-pill py-2 px-4 fs-6 fw-bold" style="color: var(--color-brand); border-color: var(--color-brand) !important;">View Resume</a>
+             <a href="certificate/resume.pdf" download class="btn-brand-pill fs-6 py-2 px-4">Download PDF</a>
+         </div>
+    </div>
+</section>  
 
     <section id="contact" class="section-padding text-white" style="background-color: var(--color-dark);">
         <div class="container-px">
@@ -1357,12 +956,11 @@ Portfolio
             <div class="d-flex gap-4">
                 <a href="https://github.com/shebeebk10-hue" target="_blank" class="text-secondary text-uppercase fw-bold text-decoration-none" style="font-size: 11px; letter-spacing: 2px;">GitHub</a>
                 <a href="https://www.linkedin.com/in/shebeeb-k-00a6a4" target="_blank" class="text-secondary text-uppercase fw-bold text-decoration-none" style="font-size: 11px; letter-spacing: 2px;">LinkedIn</a>
->>>>>>> 0865a4bbf4a6bce55699a13d0332aa1ff3ecd5d5
             </div>
         </div>
     </footer>
 
-<<<<<<< HEAD
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Background Slider
@@ -1398,10 +996,9 @@ Portfolio
             const loader = document.getElementById("loader");
            setTimeout(() => {
     loader.style.display = "none";
-}, 1000);
+    }, 1000);
 
         });
->>>>>>> 0865a4bbf4a6bce55699a13d0332aa1ff3ecd5d5
     </script>
 </body>
 </html>
