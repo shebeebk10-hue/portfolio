@@ -480,6 +480,11 @@ section {
         z-index: 999;
     }
 }
+.btn-outline-warning:hover {
+    background-color: var(--color-brand) !important;
+    border-color: var(--color-brand) !important;
+    color: #fff !important; /* Makes the text white when background turns orange */
+}
 
     </style>
 </head>
@@ -487,51 +492,47 @@ section {
 
 
    
-    <div id="loader">
-        <div class="text-center">
-            <h1 class="loader-logo">SK</h1>
-            <div class="loader-line"></div>
-        </div>
-    </div>
+  <div class="navbar-brand-wrapper">
+    <a href="#home" class="navbar-brand serif-title fw-bold fs-3 text-decoration-none" style="color: var(--color-dark);">
+        SK
+    </a>
+</div>
 
-    <aside class="social-sidebar">
-        <a href="mailto:shebeebk10@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://leetcode.com/u/shebeeb_k/" target="_blank" class="social-icon"><i class="fa-solid fa-code"></i></a>
-        <a href="www.linkedin.com/in/shebeeb-k-00a6a43b9" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/shebeebk10-hue" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
-        <a href="https://wa.me/918921036219" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://instagram.com/shbeebbh" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-    </aside>
+<aside class="social-sidebar">
+    <a href="mailto:shebeebk10@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://leetcode.com/u/shebeeb_k/" target="_blank" class="social-icon"><i class="fa-solid fa-code"></i></a>
+    <a href="https://www.linkedin.com/in/shebeeb-k-00a6a43b9" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://github.com/shebeebk10-hue" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+    <a href="https://wa.me/918921036219" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://instagram.com/shbeebbh" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+</aside>
 
-    <button id="backToTop" onclick="window.scrollTo(0,0)">
-        <i class="fa-solid fa-arrow-up fs-5"></i>
-    </button>
+<button id="backToTop" onclick="window.scrollTo(0,0)">
+    <i class="fa-solid fa-arrow-up fs-5"></i>
+</button>
 
 <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-custom">
-    <div class="container-px d-flex align-items-center">
+    <div class="container-px d-flex align-items-center justify-content-between w-100">
 
-        <!-- Logo -->
         <a href="#" class="serif-title fs-3 text-decoration-none fw-medium text-dark">
             SK.
         </a>
 
-        <!-- Hamburger -->
-<button class="navbar-toggler ms-auto border-0 bg-transparent fs-3 text-dark"
+        <button class="navbar-toggler border-0 bg-transparent fs-3 text-dark"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarMenu">
             <i class="fa-solid fa-bars-staggered"></i>
         </button>
 
-        <!-- Menu -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
             <div class="d-flex flex-column flex-md-row gap-4">
-                <a href="#home" class="nav-custom-link">Home</a>
-                <a href="#skills" class="nav-custom-link">Skills</a>
-                <a href="#experience" class="nav-custom-link">Experience</a>
-                <a href="#projects" class="nav-custom-link">Works</a>
-                <a href="#certifications" class="nav-custom-link">Certificates</a>
-                <a href="#contact" class="nav-custom-link">Contact</a>
+                <a href="#home" class="nav-custom-link text-decoration-none">Home</a>
+                <a href="#skills" class="nav-custom-link text-decoration-none">Skills</a>
+                <a href="#experience" class="nav-custom-link text-decoration-none">Experience</a>
+                <a href="#projects" class="nav-custom-link text-decoration-none">Works</a>
+                <a href="#certifications" class="nav-custom-link text-decoration-none">Certificates</a>
+                <a href="#contact" class="nav-custom-link text-decoration-none">Contact</a>
             </div>
         </div>
 
@@ -841,7 +842,7 @@ Portfolio
             <h2 class="serif-title section-title">Certifications</h2>
         </div>
         
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4">
             <div class="col-md-4">
                 <div class="cert-card">
                     <div class="cert-icon-container"><i class="fa-brands fa-python"></i></div>
@@ -908,7 +909,7 @@ Portfolio
                     <h3 class="serif-title fs-3 mb-2">Prompt Engineering</h3>
                     <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">02 Apr 2026</p>
                     <p class="text-secondary mb-4 flex-grow-1">Optimizing LLM interactions through advanced prompting techniques and chain-of-thought reasoning.</p>
-                    <a href="certificate\prompt.pdf " target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
+                    <a href="certificate\prompt.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
                 </div>
             </div>
             
@@ -923,8 +924,8 @@ Portfolio
          <p class="text-secondary fs-4 mb-5 mx-auto" style="max-width: 650px;">Click below to view or download my professional experience and technical background.</p>
          
          <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
-             <a href="certificate/resume.pdf" target="_blank" class="btn btn-outline-warning border-2 rounded-pill py-2 px-4 fs-6 fw-bold" style="color: var(--color-brand); border-color: var(--color-brand) !important;">View Resume</a>
-             <a href="certificate/resume.pdf" download class="btn-brand-pill fs-6 py-2 px-4">Download PDF</a>
+             <a href="shebeeb/resume.pdf" target="_blank" class="btn btn-outline-warning border-2 rounded-pill py-2 px-4 fs-6 fw-bold" style="color: var(--color-brand); border-color: var(--color-brand) !important;">View Resume</a>
+             <a href="shebeeb/resume.pdf" download class="btn-brand-pill fs-6 py-2 px-4">Download PDF</a>
          </div>
     </div>
 </section>  
