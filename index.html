@@ -839,7 +839,7 @@ Portfolio
             <h2 class="serif-title section-title">Certifications</h2>
         </div>
         
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
             <div class="col-md-4">
                 <div class="cert-card">
                     <div class="cert-icon-container"><i class="fa-brands fa-python"></i></div>
@@ -899,6 +899,17 @@ Portfolio
                     <a href="certificate\GraphQL.pdf" target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <div class="cert-icon-container"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3 class="serif-title fs-3 mb-2">Prompt Engineering</h3>
+                    <p class="fw-bold fs-7 mb-3" style="color: var(--color-brand);">02 Apr 2026</p>
+                    <p class="text-secondary mb-4 flex-grow-1">Optimizing LLM interactions through advanced prompting techniques and chain-of-thought reasoning.</p>
+                    <a href="certificate\prompt.pdf " target="_blank" class="btn btn-outline-secondary w-100 rounded-pill py-3 text-uppercase fw-bold" style="font-size: 10px; letter-spacing: 2px;">View Certificate</a>
+                </div>
+            </div>
+            
         </div>
     </div>
 </section>
@@ -962,24 +973,6 @@ Portfolio
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Background Slider
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function autoSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        setInterval(autoSlide, 5000);
-
-        // Sport Slider
-        function scrollSlider(direction) {
-            const slider = document.getElementById('sportSlider');
-            const sliderWidth = slider.offsetWidth;
-            slider.scrollBy({ left: direction * sliderWidth, behavior: 'smooth' });
-        }
-=======
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
